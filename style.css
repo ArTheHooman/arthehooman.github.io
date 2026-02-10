@@ -1,0 +1,12 @@
+.section {
+  transition: opacity 0.5s ease;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+}
+
+/* Caveat Brush for caption class */
+.caption {
+  font-family: "Caveat Brush", cursive;
+}

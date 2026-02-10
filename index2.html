@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>For You 🌷</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style href="style.css"></style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Lexend:wght@300&display=swap" rel="stylesheet"> 
+<style>
+    body {
+      touch-action: manipulation;
+    }
+    .section {
+      transition: opacity 0.5s ease;
+    }
+    body {
+      font-family: 'Lexend', sans-serif;
+    }
+
+    /* Caveat Brush for caption class */
+    .caption {
+      font-family: 'Caveat Brush';
+    }
+  </style>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'polaroid': '##ecf4f3',
+        },
+      }
+    }
+  }
+</script>
+</html>
+
+<body class="bg-pink-50 min-h-screen text-center">
+  <div
+    id="loader"
+    class="fixed inset-0 bg-pink-50 flex items-center justify-center z-50"
+  >
+    <p class="text-pink-600 text-lg animate-pulse">
+      Preparing something special... 🌷
+    </p>
+  </div>
+  <div class="w-full max-w-lg mx-auto px-3">
+    <!-- PASSWORD -->
+    <div
+      id="password"
+      class="section flex flex-col items-center justify-center min-h-screen gap-4"
+    >
+      <h1 class="text-xl sm:text-2xl text-pink-700">Enter the key 🌷</h1>
+
+      <input
+        id="pass"
+        type="password"
+        class="p-3 w-full max-w-xs border rounded text-center text-base"
+      />
+
+      <button
+        onclick="checkPassword()"
+        class="bg-pink-500 text-white px-6 py-3 rounded w-full max-w-xs"
+      >
+        Open
+      </button>
+    </div>
+
+    <!-- LANDING -->
+    <div
+      id="landing"
+      class="section hidden min-h-screen flex flex-col justify-center gap-4"
+    >
+      <h2 class="text-2xl text-pink-700">
+<h2 class="text-2xl text-pink-800">
+  Hey, <span id="herName"></span> 🌹
+</h2>
+      </h2>
+
+        <p class="text-pink-600 text-lg">I could have just sent you a message but I wanted to make something special, something that is more "us". Here are a few memories... 🌷</p>
+        <!-- LANDING TEXT -->
+      </p>
+
+      <button
+        onclick="showSection('gallery')"
+        class="bg-pink-500 text-white px-6 py-3 rounded mx-auto w-48"
+      >
+        Start 💌
+      </button>
+    </div>
+
+    <!-- GALLERY -->
+    <div id="gallery" class="section hidden min-h-screen pt-10 relative">
+      <button
+        onclick="showSection('landing')"
+        class="absolute top-2 left-2 text-pink-600 text-lg"
+      >
+        ←
+      </button>
+
+      <h2 class="text-xl text-pink-700 mb-4">You 💗</h2>
+
+      <div class="polaroid bg-white p-3 rounded-xl shadow-lg mx-auto">
+        <img
+          id="carouselImage"
+          class="w-full h-[60vh] object-contain rounded-lg transition-opacity duration-300"
+        />
+
+        <p id="caption" class="caption text-lg mt-1"></p>
+      </div>
+
+      <div id="indicators" class="flex justify-center gap-2 mt-3"></div>
+
+      <button
+        onclick="showSection('childhood')"
+        class="mt-5 bg-pink-500 text-white px-6 py-3 rounded w-full"
+      >
+        Next
+      </button>
+    </div>
+
+    <!-- CHILDHOOD -->
+    <div id="childhood" class="section hidden min-h-screen pt-10 relative">
+      <button
+        onclick="showSection('gallery')"
+        class="absolute top-2 left-2 text-pink-600 text-lg"
+      >
+        ←
+      </button>
+
+      <h2 class="text-xl text-pink-700 mb-4">God's Favourite Child 🤍</h2>
+
+      <div class="bg-white p-3 rounded-xl shadow-lg mx-auto">
+        <img id="childImg" class="caption w-full h-[60vh] object-contain rounded" />
+
+        <p id="childCaption" class="caption text-lg mt-2">
+          <!-- childhood caption -->
+        </p>
+      </div>
+
+      <div id="childIndicators" class="flex justify-center gap-2 mt-3"></div>
+
+      <button
+        onclick="showSection('us')"
+        class="mt-5 bg-pink-500 text-white px-6 py-3 rounded w-full"
+      >
+        Next
+      </button>
+    </div>
+
+    <!-- US -->
+    <div id="us" class="section hidden min-h-screen pt-10 relative">
+      <button
+        onclick="showSection('childhood')"
+        class="absolute top-2 left-2 text-pink-600 text-lg"
+      >
+        ←
+      </button>
+
+      <h2 class="text-xl text-pink-700 mb-4">Us 💞</h2>
+
+      <div class="bg-white p-3 rounded-xl shadow mx-auto">
+        <img id="usImg" class="pt-5px w-full h-[60vh] object-contain rounded-lg" />
+
+        <p id="usCaption" class="pb-5px caption text-lg mt-1">
+          <!-- caption -->
+        </p>
+      </div>
+
+      <div id="usIndicators" class="flex justify-center gap-2 mt-3"></div>
+
+      <button
+        onclick="showSection('edit')"
+        class="mt-5 bg-pink-500 text-white px-6 py-3 rounded w-full"
+      >
+        Next
+      </button>
+    </div>
+
+    <!-- EDIT -->
+    <div id="edit" class="section hidden min-h-screen pt-10 relative">
+      <button
+        onclick="showSection('us')"
+        class="absolute top-2 left-2 text-pink-600 text-lg"
+      >
+        ←
+      </button>
+
+      <h2 class="text-xl text-pink-700 mb-4">A little edit ✨</h2>
+
+      <video controls class="w-full rounded-xl">
+        <source src="assets/edit.mp4" />
+      </video>
+
+      <button
+        onclick="showSection('words')"
+        class="mt-5 bg-pink-500 text-white px-6 py-3 rounded w-full"
+      >
+        Next
+      </button>
+    </div>
+
+    <!-- WORDS -->
+    <div id="words" class="section hidden min-h-screen pt-10 relative">
+      <button
+        onclick="showSection('edit')"
+        class="absolute top-2 left-2 text-pink-600 text-lg"
+      >
+        ←
+      </button>
+
+      <h2 class="text-2xl text-pink-700 mb-4">A special message 💖</h2>
+      <p class="whitespace-pre-line text-base mt-10 px-2">Hieeee!! <br> Whatever was between us once may not be there anymore... But I can't deny that a part of me still cares about you, still remembers the moments, the laughters, and everything we shared. I don't expect anything in return, neither am I trying to change the past. Whatever happened, happened. Now, I just wanted to let you know that you mattered the world to me, and still do, in some quiet way. <br></p>
+      <p class="whitespace-pre-line text-lg text-bold text-pink-700">So, Happy Valentine's Day Pihu 🫶💗</p>
+      <p class="whitespace-pre-line text-sm mt-10">(Hope you liked the edit though-)</p>
+    </div>
+  </div>
+<footer class="caption mt-10 text-xs text-pink-600">
+  Made with 💌, just for you
+</footer>
+  <script src="app1.js"></script>
+</body>
