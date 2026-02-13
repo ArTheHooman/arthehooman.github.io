@@ -54,11 +54,15 @@
       id="password"
       class="section flex flex-col items-center justify-center min-h-screen gap-4"
     >
-      <h1 class="text-xl sm:text-2xl text-pink-700">Enter the key 🌷</h1>
+      <h1 class="text-xl sm:text-2xl text-pink-700">Enter your birthdate</h1>
 
       <input
         id="pass"
+        inputmode="numeric"
+        pattern="[0-9]*"
         type="password"
+        placeholder="DDMMYY"
+        pattern="[0-9]*"
         class="p-3 w-full max-w-xs border rounded text-center text-base"
       />
 
@@ -190,10 +194,10 @@
         ←
       </button>
 
-      <h2 class="text-xl text-pink-700 mb-4">A little edit ✨</h2>
+      <h2 class="text-xl text-pink-700 mb-4">A little surprise ✨</h2>
 
       <video controls class="w-full rounded-xl">
-        <source src="assets/edit.mp4" />
+        <source src="assets/Her!.mov" />
       </video>
 
       <button
