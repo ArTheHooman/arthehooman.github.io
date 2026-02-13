@@ -65,6 +65,12 @@ function showSection(id) {
   if (id === "us") {
     startUsCarousel();
   }
+  if (id === "edit") {
+    pauseMusic();
+  }
+  if (id === "words") {
+    startMusic();
+  }
 }
 
 window.onload = function () {
@@ -142,12 +148,12 @@ let galleryPhotos = [
     img: "assets/aatmaja4.jpg",
     text: "All that guessing, totally worth the wait! ✨",
   },
-  { img: "assets/aatmaja5.jpg", text: "My Monkiiiii 🙊" },
+  { img: "assets/aatmaja5.jpg", text: "Chatpatiii Monkiiiiii 🙊" },
 ];
 
 let childhoodPhotos = [
-  { img: "assets/smol1.jpg", text: "My cute little Rabbit 🐰🩷" },
-  { img: "assets/smol2.jpg", text: "Flexing those sandals 😎✨" },
+  { img: "assets/smol1.jpg", text: "My smol little Rabbit 🐰🩷" },
+  { img: "assets/smol2.jpg", text: "Cutieeee AAAAAAAAAA 🥹✨" },
 ];
 
 let usPhotos = [
@@ -157,11 +163,11 @@ let usPhotos = [
   },
   {
     img: "assets/us3.png",
-    text: "Not us trying to use Gemini but failing miserably 😭😭",
+    text: "Not us trying out Gemini but failing miserably 😭😭",
   },
   {
     img: "assets/us2.jpg",
-    text: "Oh, those days preparing for Farewell! ",
+    text: "Oh, those days we spent preparing for Farewell!",
   },
 ];
 
@@ -191,6 +197,10 @@ music.volume = 0.4;
 
 function startMusic() {
   music.play();
+}
+
+function pauseMusic() {
+  music.pause();
 }
 
 function typeWriter(text, element) {
