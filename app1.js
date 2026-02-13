@@ -9,7 +9,7 @@ function checkPassword() {
     startMusic();
     showSection("landing");
   } else {
-    alert("Not this one 🌷");
+    alert("Not quite right 👀");
   }
 }
 
@@ -141,7 +141,7 @@ let galleryPhotos = [
   { img: "assets/aatmaja1.jpg", text: "The prettiest lady I've ever seen 💝" },
   {
     img: "assets/aatmaja2.jpg",
-    text: "Janmashtmi ft. just Krishna admiring his Radha 🥹",
+    text: "Janmashtmi (Just Krishna admiring his Radha 🥹)",
   },
   { img: "assets/aatmaja3.jpg", text: "A smile to die for! 😋" },
   {
